@@ -1,0 +1,79 @@
+{
+  "name": "crawlee-pino",
+  "version": "0.0.0",
+  "description": "🌲 use Pino to log within Crawlee",
+  "type": "module",
+  "exports": {
+    ".": {
+      "types": "./lib/types/index.d.ts",
+      "default": "./lib/esm/index.js"
+    }
+  },
+  "types": "./lib/types/index.d.js",
+  "files": [
+    "lib"
+  ],
+  "scripts": {
+    "lint": "prettier-eslint --write $PWD/\"src/**/*.[jt]s?(x)\" ",
+    "clean": "rimraf ./lib",
+    "prebuild": "npm run clean",
+    "build": "tsc -p ./tsconfig.esm.json",
+    "test": "ava",
+    "release": "np"
+  },
+  "engines": {
+    "node": ">= 18"
+  },
+  "repository": {
+    "url": "imyelo/crawlee-pino",
+    "type": "git"
+  },
+  "author": "yelo <zhihuzeye@gmail.com>",
+  "license": "Apache-2.0",
+  "bugs": {
+    "url": "https://github.com/imyelo/crawlee-pino/issues"
+  },
+  "homepage": "https://github.com/imyelo/crawlee-pino#readme",
+  "ava": {
+    "extensions": {
+      "ts": "module"
+    },
+    "nodeArguments": [
+      "--loader=ts-node/esm"
+    ],
+    "files": [
+      "test/**/*",
+      "!test/helpers/**/*"
+    ]
+  },
+  "prettier": "@yelo/prettier-config",
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "publishConfig": {
+    "registry": "https://registry.npmjs.org"
+  },
+  "devDependencies": {
+    "@yelo/eslint-config": "^0.1.0",
+    "@yelo/prettier-config": "^0.0.1",
+    "@yelo/tsconfig": "^0.2.0",
+    "ava": "^5.2.0",
+    "crawlee": "^3.3.0",
+    "eslint": "^8.36.0",
+    "husky": "^8.0.3",
+    "lint-staged": "^13.2.0",
+    "np": "^7.6.3",
+    "pino": "^8.11.0",
+    "prettier": "^2.8.4",
+    "prettier-eslint-cli": "^6.0.1",
+    "rimraf": "^4.4.0",
+    "ts-node": "^10.9.1",
+    "typescript": "^5.0.2"
+  },
+  "peerDependencies": {
+    "crawlee": "^3",
+    "pino": "^8"
+  }
+}
