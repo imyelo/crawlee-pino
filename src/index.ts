@@ -23,7 +23,7 @@ export class CrawleePino extends CrawleeLogger {
 
   constructor(options?: { pino: PinoLogger }) {
     super(options)
-    this.pino = pino
+    this.pino = options.pino
   }
 
   _log(level: LogLevel, message: string, data?: any, exception?: Exception, options?: LogOptions) {
