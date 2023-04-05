@@ -19,7 +19,8 @@
     "prebuild": "npm run clean",
     "build": "tsc -p ./tsconfig.esm.json",
     "test": "ava",
-    "release": "np"
+    "release": "np",
+    "prepare": "husky install"
   },
   "engines": {
     "node": ">= 18"
@@ -47,11 +48,6 @@
     ]
   },
   "prettier": "@yelo/prettier-config",
-  "husky": {
-    "hooks": {
-      "pre-commit": "lint-staged"
-    }
-  },
   "publishConfig": {
     "registry": "https://registry.npmjs.org"
   },
@@ -62,7 +58,7 @@
     "ava": "^5.2.0",
     "crawlee": "^3.3.0",
     "eslint": "^8.36.0",
-    "husky": "^8.0.3",
+    "husky": "^8.0.0",
     "lint-staged": "^13.2.0",
     "np": "^7.6.3",
     "pino": "^8.11.0",
