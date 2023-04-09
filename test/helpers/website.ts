@@ -1,6 +1,6 @@
+import getPort from 'get-port'
 import http from 'http'
 import { serve } from 'micro'
-import getPort from 'get-port'
 
 export const createWebsite = async () => {
   const port = await getPort()

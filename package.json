@@ -48,25 +48,30 @@
     ]
   },
   "prettier": "@yelo/prettier-config",
+  "lint-staged": {
+    "*.{md,js,ts,json}": [
+      "prettier-eslint --write"
+    ]
+  },
   "publishConfig": {
     "registry": "https://registry.npmjs.org"
   },
   "devDependencies": {
     "@types/sinon": "^10.0.13",
-    "@yelo/eslint-config": "^0.1.0",
-    "@yelo/prettier-config": "^0.0.1",
-    "@yelo/tsconfig": "^0.2.0",
+    "@yelo/eslint-config": "^0.2.0",
+    "@yelo/prettier-config": "^0.1.0",
+    "@yelo/tsconfig": "^0.3.0",
     "ava": "^5.2.0",
     "crawlee": "^3.3.0",
-    "eslint": "^8.36.0",
+    "eslint": "^8.38.0",
     "get-port": "^6.1.2",
-    "husky": "^8.0.0",
+    "husky": "^8.0.3",
     "lint-staged": "^13.2.0",
     "micro": "^10.0.1",
     "np": "^7.6.3",
     "pino": "^8.11.0",
     "pino-abstract-transport": "^1.0.0",
-    "prettier": "^2.8.4",
+    "prettier": "^2.8.7",
     "prettier-eslint-cli": "^6.0.1",
     "rimraf": "^4.4.0",
     "sinon": "^15.0.3",

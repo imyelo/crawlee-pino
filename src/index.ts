@@ -1,5 +1,5 @@
-import { type Logger as PinoLogger, type LevelWithSilent } from 'pino'
 import { Logger as CrawleeLogger, LogLevel } from 'crawlee'
+import { type LevelWithSilent, type Logger as PinoLogger } from 'pino'
 
 const LEVEL_CRAWLEE_TO_PINO: Record<LogLevel, LevelWithSilent> = {
   [LogLevel.SOFT_FAIL]: 'fatal',
