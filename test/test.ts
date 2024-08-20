@@ -1,18 +1,20 @@
-import test from 'ava'
-import sinon from 'sinon'
+import anyTest, { type TestFn } from 'ava'
+import { HttpCrawler, Log } from 'crawlee'
 import pino from 'pino'
 import buildTransport from 'pino-abstract-transport'
-import { HttpCrawler, Log } from 'crawlee'
+import sinon from 'sinon'
 import { CrawleePino } from '../src/index.js'
 import { createWebsite } from './helpers/website.js'
 
+const test = anyTest as TestFn<{ websiteURL: string }>
+
 test.before(async t => {
   // eslint-disable-next-line
-  t.context['websiteURL'] = await createWebsite()
+  t.context = { websiteURL: await createWebsite() }
 })
 
 test('defaults', async t => {
-  const { websiteURL } = t.context as any
+  const { websiteURL } = t.context
   const spy = sinon.spy()
 
   const dest = () => {
